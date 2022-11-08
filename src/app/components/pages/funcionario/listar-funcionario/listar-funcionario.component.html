@@ -1,0 +1,44 @@
+<p>Listagem de clientes</p>
+ <table>
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Cpf</th>
+        <th>Email</th>
+        <th>Salario</th>
+        <th>Nascimento</th>
+        <th>Deleta</th>
+    </tr>
+    <tr *ngFor="let funcionario of funcionarios">
+        <td>
+            {{ funcionario.id }}
+        </td>
+        <td>
+            {{ funcionario.nome }}
+        </td>
+        <td>
+            {{ funcionario.cpf }}
+        </td>
+        <td>
+            {{ funcionario.email }}
+        </td>
+        <td>
+            {{ funcionario.salario }}
+        </td>
+        <td>
+            {{ funcionario.nascimento }}
+        </td>
+        <td>
+            {{ funcionario.criadoEm }}
+        </td>
+        <td>
+            <button (click)="deletar(funcionario.id!)">Deletar</button>
+        </td>
+        <td>
+            <a
+            routerLink="/pages/funcionario/cadastrar/{{ funcionario.id }}">
+            Alterar
+            </a>
+        </td>
+    </tr>
+ </table>
